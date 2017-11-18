@@ -6,26 +6,26 @@ namespace Kata20171118_TribonaciiNumber
 {
     public partial class Tribonacii
     {
-        public double[] GetNumbers(double[] inputNumbers, int numberslength)
+        public double[] GetNumbers(double[] initialNumbers, int TribaNumberLength)
         {
-            if (numberslength == 0)
+            if (TribaNumberLength == 0)
             {
                 return new double[] { 0 };
             }
 
-            var resultNumbers = new List<double>();
-            for (var index = 0; index < numberslength; index++)
+            var answer = new List<double>();
+            for (var index = 0; index < TribaNumberLength; index++)
             {
                 if (index < 3)
                 {
-                    resultNumbers.Add(inputNumbers[index]);
+                    answer.Add(initialNumbers[index]);
                 }
                 else
                 {
-                    resultNumbers.Add(resultNumbers[index - 1] + resultNumbers[index - 2] + resultNumbers[index - 3]);
+                    answer.Add(answer[index - 1] + answer[index - 2] + answer[index - 3]);
                 }
             }
-            return resultNumbers.ToArray();
+            return answer.ToArray();
         }
     }
 }
