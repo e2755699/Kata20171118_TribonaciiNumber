@@ -13,16 +13,16 @@ namespace Kata20171118_TribonaciiNumber
                 return new double[] { 0 };
             }
 
-            var answer = new List<double>();
+            var answer = new double[TribaNumberLength];
             for (var index = 0; index < TribaNumberLength; index++)
             {
                 if (index < 3)
                 {
-                    answer.Add(initialNumbers[index]);
+                    answer[index] = initialNumbers[index];
                 }
                 else
                 {
-                    answer.Add(answer[index - 1] + answer[index - 2] + answer[index - 3]);
+                    answer[index] = answer[index - 1] + answer[index - 2] + answer[index - 3];
                 }
             }
             return answer.ToArray();
